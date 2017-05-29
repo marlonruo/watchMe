@@ -242,7 +242,7 @@
 
                         </div>
                         
-                        <input class="textos_g" type="text" style="width:calc(85% - 4px); height:6%; position:absolute; border:1px solid #A6A6A6; top:8%; left:5%; font-family:Arial; padding-left:5%; color:#888888" value="Ubicación">
+                        <input id="ubi" class="textos_g" type="text" style="width:calc(85% - 4px); height:6%; position:absolute; border:1px solid #A6A6A6; top:8%; left:5%; font-family:Arial; padding-left:5%; color:#888888" value="Ubicación">
                         <img class="centrar" src="img/centro.png" style="height:8%"/>
 						<div id="continue_mapa" class="bt_rosa" style="top:82%">
             				<div class="centrar texto_bt">CONTINUE</div>
@@ -291,6 +291,10 @@
                   
                   
                   <script>
+				  $('#mapa').click(function(){
+				  	$("#ubi").blur();
+				  })
+				  
                   	$('#login').click(function(){
 						$('#p1').css('z-index', '2')
 						$('#p3').css('visibility', 'visible')
@@ -755,31 +759,41 @@
 						$('#persona_datos').show()
 						$('#persona_datos').animate({opacity:'1', top:'82%'},800)
 						$('#persona_mas, #persona_donate, #persona_tiempo, #persona_divide, #persona_califica').hide()
-						$('#persona_mas, #persona_donate, #persona_tiempo, #persona_divide, #persona_califica').animate({opacity:'1', top:'100%'},800)
+						$('#persona_mas, #persona_donate, #persona_tiempo, #persona_divide').animate({opacity:'1', top:'100%'},800)
 
 						$('#p1').css('visibility', 'visible')
 						$('#p1').css('z-index', '10')
 						$('#p1').css('margin-left', '100%')
 						$('#p1').animate({marginLeft:'0px'}, 800)
 						setTimeout("$('#p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9').css('z-index', '0')", 800)
+						setTimeout("$('#p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9').css('visibility, 'hidden')", 800)
 						if(pos==1){
 							$('#p1').css('z-index', '2')
+							$('#p1').css('visibility', 'visible')
 						}else if(pos==2){
 							$('#p2').css('z-index', '2')
+							$('#p2').css('visibility', 'visible')
 						}else if(pos==3){
 							$('#p3').css('z-index', '2')
+							$('#p3').css('visibility', 'visible')
 						}else if(pos==4){
 							$('#p4').css('z-index', '2')
+							$('#p4').css('visibility', 'visible')
 						}else if(pos==5){
 							$('#p5').css('z-index', '2')
+							$('#p5').css('visibility', 'visible')
 						}else if(pos==6){
 							$('#p6').css('z-index', '2')
+							$('#p6').css('visibility', 'visible')
 						}else if(pos==7){
 							$('#p7').css('z-index', '2')
+							$('#p7').css('visibility', 'visible')
 						}else if(pos==8){
 							$('#p8').css('z-index', '2')
+							$('#p8').css('visibility', 'visible')
 						}else if(pos==9){
 							$('#p9').css('z-index', '2')
+							$('#p9').css('visibility', 'visible')
 						}
 						pos=1
 					})
@@ -789,7 +803,7 @@
 						$('#persona_datos').show()
 						$('#persona_datos').animate({opacity:'1', top:'82%'},800)
 						$('#persona_mas, #persona_donate, #persona_tiempo, #persona_divide, #persona_califica').hide()
-						$('#persona_mas, #persona_donate, #persona_tiempo, #persona_divide, #persona_califica').animate({opacity:'1', top:'100%'},800)
+						$('#persona_mas, #persona_donate, #persona_tiempo, #persona_divide').animate({opacity:'1', top:'100%'},800)
 						
 						//$('#p9').css('z-index', '2')
 						$('#p4').css('visibility', 'visible')
@@ -797,25 +811,37 @@
 						$('#p4').css('margin-left', '100%')
 						$('#p4').animate({marginLeft:'0px'}, 800)
 						setTimeout("$('#p1, #p2, #p3, #p5, #p6, #p7, #p8, #p9').css('z-index', '0')", 800)
+						setTimeout("$('#p1, #p2, #p3, #p5, #p6, #p7, #p8, #p9').css('visibility, 'hidden')", 800)
 						if(pos==1){
 							$('#p1').css('z-index', '2')
+							$('#p1').css('visibility', 'visible')
 						}else if(pos==2){
 							$('#p2').css('z-index', '2')
+							$('#p2').css('visibility', 'visible')
 						}else if(pos==3){
 							$('#p3').css('z-index', '2')
+							$('#p3').css('visibility', 'visible')
 						}else if(pos==4){
 							$('#p4').css('z-index', '2')
+							$('#p4').css('visibility', 'visible')
 						}else if(pos==5){
 							$('#p5').css('z-index', '2')
+							$('#p5').css('visibility', 'visible')
 						}else if(pos==6){
 							$('#p6').css('z-index', '2')
+							$('#p6').css('visibility', 'visible')
 						}else if(pos==7){
 							$('#p7').css('z-index', '2')
+							$('#p7').css('visibility', 'visible')
 						}else if(pos==8){
 							$('#p8').css('z-index', '2')
+							$('#p8').css('visibility', 'visible')
 						}else if(pos==9){
 							$('#p9').css('z-index', '2')
+							$('#p9').css('visibility', 'visible')
 						}
+			
+					
 						pos=4
 					})
                   </script>
