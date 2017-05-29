@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
+        <script src="js/jquery-1.11.2.js"></script>
+		<script src="js/jquery.mobile.custom.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/ui.touch.punch.js"></script>
+        <script type="text/javascript" src="js/jquery.form.js"></script>
+
+
+        <title>WatchMe</title>
+    </head>
+    <body onLoad="inicio()">
+        <div class="app">
+        
+       	    <div id="portada" class="paginas" style="background:url(img/rosa.png); background-size:100% 100%">
+                <img src="img/logo.png" class="centrar" style="height:30%"/>
+                <div class="centrar titulo" style="margin-top:25%; text-align:center; color:#FFFFFF">WatchME!</div>
+            </div>
+            
+            
+            <div id="todo" class="paginas" style="visibility:hidden;">
+            	  <div id="menu">
+                      <img src="img/menu.png" style="position:absolute; height:50%; top:25%; left:5%; cursor:pointer"/> 
+                      <img id="perfil" src="img/perfil.png" style="position:absolute; height:50%; top:25%; right:5%; cursor:pointer"/>
+                      <div id="home" class="centrar menu" style="width:70%; text-align:center; color:#505659">WatchME!</div>
+                  </div>
+                  
+                  
+                  
+                  
+                  <div id="p1" class="contenido">
+                  	<div style="position:absolute; top:0%; width:100%; height:64%; background:url(img/chica.jpg); background-size:cover; background-position:center">
+                    	<img src="img/logo.png" class="centrar" style="height:50%"/>
+                        <div class="centrar textos_g" style="margin-top:20%; text-align:center; color:#FFFFFF">Mi Perfil</div>
+                    </div>
+                    <div id="login" class="bt_rosa" style="top:64%"><div class="centrar texto_bt">LOG IN</div></div>
+                    <div id="signup" class="bt_blanco" style="top:82%"><div class="centrar texto_bt">SIGN UP</div></div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  <div id="p2" class="contenido" style="visibility:hidden">
+                  	<div style="position:absolute; top:0%; width:100%; height:100%; background:url(img/chica2.jpg); background-size:cover; background-position:center">
+                    		<div class="textos_g" style="position:absolute; top:7%; text-align:left; margin-left:10%; color:#FFFFFF">SIGN UP</div>
+                            
+                            <input class="textos_g" type="text" style="position:absolute; top:12%; text-align:left; margin-left:5%; color:#FFFFFF; width:calc(85% - 4px); height:5.5%; border:2px solid #EB2027; font-family:Arial; background:none; padding-left:5%;" value="Email" onBlur="StatusBar.hide()">
+                            
+                            <div class="textos_m" style="position:absolute; left:10%; top:21%; color:#FFFFFF">Based on your email address, we recommend</div>
+                            
+                            <div class="bt_signup" style="position:absolute; top:25.5%; text-align:left; margin-left:5%; color:#FFFFFF; width:90%; height:8%; font-family:Arial; background:#EB2027; cursor:pointer">
+                            	<div class="centrar_v texto_g" style="left:22%">Sign in width Google</div>
+                       	    	<img class="centrar_v" src="img/gog.png" style="left:8%; height:50%"/> 
+                            </div>
+                            
+                            <div class="textos_m" style="position:absolute; left:10%; top:37%; color:#FFFFFF">Or choose one of the following options</div>
+                            
+                             <div class="bt_signup" style="position:absolute; top:43%; text-align:left; margin-left:5%; color:#FFFFFF; width:90%; height:8%; font-family:Arial; background:#29A9E1; cursor:pointer">
+                            	<div class="centrar_v texto_g" style="left:22%">Sign in width Paypal</div>
+                       	    	<img class="centrar_v" src="img/pay.png" style="left:8%; height:50%"/> 
+                            </div>
+                            
+                            <div class="bt_signup" style="position:absolute; top:53%; text-align:left; margin-left:5%; color:#FFFFFF; width:90%; height:8%; font-family:Arial; background:#0D72B9; cursor:pointer">
+                            	<div class="centrar_v texto_g" style="left:22%">Sign in width Facebook</div>
+                       	    	<img class="centrar_v" src="img/fac.png" style="left:8%; height:50%"/> 
+                            </div>
+                            
+                            <div class="bt_signup" style="position:absolute; top:63%; text-align:left; margin-left:5%; color:#FFFFFF; width:90%; height:8%; font-family:Arial; background:#272361; cursor:pointer">
+                            	<div class="centrar_v texto_g" style="left:22%">Sign in width Microsoft</div>
+                       	    	<img class="centrar_v" src="img/win.png" style="left:8%; height:50%"/> 
+                            </div>
+                            
+                            <div class="bt_signup" style="position:absolute; top:73%; text-align:left; margin-left:5%; color:#FFFFFF; width:90%; height:8%; font-family:Arial; background:#663387; cursor:pointer">
+                            	<div class="centrar_v texto_g" style="left:22%">Sign in width Yahoo</div>
+                       	    	<img class="centrar_v" src="img/yah.png" style="left:8%; height:50%"/> 
+                            </div>
+                            
+                            <div class="bt_signup" style="position:absolute; top:85%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                            	<div class="centrar_v texto_g" style="left:10%">Create password account</div>
+                            </div>
+                   
+                  		</div>
+                  
+                  </div>
+                  
+                  
+                  
+                  <div id="p3" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:82%; background:url(img/chica3.jpg); background-size:cover; background-position:center">
+                        	   <div class="texto_bt centrar_h" style="position:absolute; top:31%; color:#FFFFFF; text-align:center; width:100%">Whats your email address?</div>
+                             <div class="textos_m centrar_h" style="position:absolute; top:38%; color:#FFFFFF; text-align:center">Sign up width phone instead</div>
+                             
+                              <input class="textos_m centrar_h" type="text" style="position:absolute; top:52%; text-align:left; color:#FFFFFF; width:70%; height:5.5%; border:none; border-bottom:2px solid #d71486; font-family:Arial; background:none;" value="Email" onBlur="StatusBar.hide()">
+                             
+                        </div>
+                        
+                        <div id="continue_login" class="bt_rosa" style="top:82%">
+                        	<div class="centrar texto_bt">CONTINUE</div>
+                        </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  <div id="p4" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:82%; background:url(img/chica3.jpg); background-size:cover; background-position:center">
+                        	   <div class="textos_g" style="position:absolute; top:7%; left:10%; color:#FFFFFF; text-align:left;">I AM:</div>
+                               <div style="position:absolute; top:13%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                            		<div class="centrar_v texto_g" style="left:10%">Male</div>
+                                    <div class="centrar_v texto_g" style="left:50%">|</div>
+                                    <div class="centrar_v texto_g" style="left:60%">Female</div>
+                                    
+                                     <div class="bt_rosa_r centrar_v" style="left:5%; width:40%; height:70%; display:none">
+                                    	<div class="centrar texto_g">Male</div>
+                                    </div>
+                                    <div class="bt_rosa_r centrar_v" style="left:55%; width:40%; height:70%">
+                                    	<div class="centrar texto_g">Female</div>
+                                    </div>
+                                    
+                               </div>
+                               
+                               <div class="textos_g" style="position:absolute; top:24%; left:10%; color:#FFFFFF; text-align:left;">SHOW ME:</div>
+                               
+                          		<div style="position:absolute; top:30%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                       		   		<div class="centrar_v texto_g" style="left:10%">Men</div>
+                            		<img class="centrar_v" src="img/cuadro.png" height="50%" style="right:5%"/>
+                                    <img class="centrar_v" src="img/pal1.png" height="45%" style="right:4%; margin-top:-1%"/> 
+                               </div>
+                               
+                               <div style="position:absolute; top:38%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                               		<div class="centrar_v texto_g" style="left:10%">Women</div>
+                                    <img class="centrar_v" src="img/cuadro.png" height="50%" style="right:5%"/>
+                                    <img class="centrar_v" src="img/pal2.png" height="45%" style="right:4%; margin-top:-1%"/>
+                               </div>
+                               
+                               <div style="position:absolute; top:38%; text-align:left; margin-left:10%; width:80%; height:1px; background:#AAAAAA"> 		
+                               </div>
+                               
+                               <div class="textos_g" style="position:absolute; top:58%; left:10%; color:#FFFFFF; text-align:left;">COUNTRY:</div>
+                               
+                               <div style="position:absolute; top:64%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                       		   		<div class="centrar_v texto_g" style="left:10%">México</div>
+                            		<img class="centrar_v" src="img/abajo.png" height="15%" style="right:5%"/>
+                               </div>
+                               
+                               <div class="textos_g" style="position:absolute; top:76%; left:10%; color:#FFFFFF; text-align:left;">SHOW AGES:</div>
+                                <div class="textos_g" style="position:absolute; top:76%; right:10%; color:#FFFFFF; text-align:right;">18 - 55+</div>
+                               
+                          <div style="position:absolute; top:82%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                       		   		<div class="centrar_v" style="width:80%; height:1px; left:10%; background:#B8B8B8"></div>
+                                    <div class="centrar_v" style="width:30%; height:1px; left:10%; background:#d71486"></div>
+                                    
+                           		    <img src="img/bolita.png" class="centrar_v" style="height:60%; left:40%; opacity:.5"/> 
+                                    <img src="img/bolita.png" class="centrar_v" style="height:24%; left:42%;"/> 
+                           </div>
+                             
+                             
+                             
+                        </div>
+                        
+                        <div id="continue_opciones" class="bt_rosa" style="top:82%">
+                        	<div class="centrar texto_bt">CONTINUE</div>
+                        </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div id="p5" class="contenido" style="visibility:hidden">
+                    <div id="mapa" style="position:absolute; top:0%; width:100%; height:86%;">
+
+                        </div>
+                        
+                        <input class="textos_g" type="text" style="width:calc(85% - 4px); height:6%; position:absolute; border:1px solid #A6A6A6; top:8%; left:5%; font-family:Arial; padding-left:5%; color:#888888" value="Ubicación">
+                        <img class="centrar" src="img/centro.png" style="height:8%"/>
+						<div id="continue_mapa" class="bt_rosa" style="top:82%">
+            				<div class="centrar texto_bt">CONTINUE</div>
+                        </div>
+                        
+                        <img src="img/m1.png" style="position:absolute; height:11%; bottom:34%; right:5%"/>
+                        <img src="img/m2.png" style="position:absolute; height:11%; bottom:22%; right:5%"/>
+                        
+                        
+                        <div id="add_location" style="position:absolute; width:100%; height:100%; background:url(img/azul.png); background-size:100% 100%; display:none">
+                        	<div style="position:absolute; width:70%; left:15%; height:55%; bottom:37%; background:#FFFFFF">
+                            	<div style="position:absolute; top:0px; width:100%; height:10%; background:#505659">
+                                	<div class="centrar_v textos_m" style="width:85%; left:15%; color:#FFFFFF">Discover people in:</div>
+                                </div>
+                                
+                                <div style="position:absolute; top:10%; width:80%; left:10%; height:20%; background:#fff; border-bottom:1px solid #9E9E9E">
+                                	<img class="centrar_v" src="img/pin1.png" style="height:40%; left:0%"/>
+                                    <div class="centrar_v textos_g" style="width:75%; left:20%; color:#474747">My Current Location</div>
+                                </div>
+                                
+                                
+                                 <div style="position:absolute; top:calc(30% + 1px); width:80%; left:10%; height:16%; background:#fff; border-bottom:1px solid #9E9E9E">
+                                	<img class="centrar_v" src="img/pin2.png" style="height:30%; left:0%"/>
+                                    <div class="centrar_v textos_c" style="width:75%; left:20%; color:#474747">Fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</div>
+                                </div>
+                                
+                                <div style="position:absolute; top:calc(46% + 2px); width:80%; left:10%; height:16%; background:#fff; border-bottom:1px solid #9E9E9E">
+                                	<img class="centrar_v" src="img/pin2.png" style="height:30%; left:0%"/>
+                                    <div class="centrar_v textos_c" style="width:75%; left:20%; color:#474747">Fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</div>
+                                </div>
+                                
+                                <div style="position:absolute; top:calc(62% + 3px); width:80%; left:10%; height:16%; background:#fff;">
+                                	<img class="centrar_v" src="img/pin2.png" style="height:30%; left:0%"/>
+                                    <div class="centrar_v textos_c" style="width:75%; left:20%; color:#474747">Fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</div>
+                                </div>
+                                
+                                <div id="continue_add" class="bt_rosa" style="bottom:0px;">
+                                	<div class="centrar texto_g" style="width:100%">ADD NEW LOCATION</div>
+                                </div>
+                            </div>
+                            <img src="img/flechita.png" style="position:absolute; height:3%; bottom:34%; right:21%"/>
+                            <img id="cierra_add" src="img/cierra.png" style="position:absolute; height:11%; bottom:21%; right:18%; cursor:pointer"/>
+                        </div>
+                  </div>
+                  
+                  
+                  
+                  <script>
+                  	$('#login').click(function(){
+						$('#p1').css('z-index', '2')
+						$('#p3').css('visibility', 'visible')
+						$('#p3').css('z-index', '10')
+						$('#p3').css('margin-left', '100%')
+						$('#p3').animate({marginLeft:'0px'}, 800)
+					})
+					
+					$('#signup').click(function(){
+						$('#p1').css('z-index', '2')
+						$('#p2').css('visibility', 'visible')
+						$('#p2').css('z-index', '10')
+						$('#p2').css('margin-left', '100%')
+						$('#p2').animate({marginLeft:'0px'}, 800)
+					})
+					
+					
+					$('.bt_signup').click(function(){
+						$('#p2').css('z-index', '2')
+						$('#p4').css('visibility', 'visible')
+						$('#p4').css('z-index', '10')
+						$('#p4').css('margin-left', '100%')
+						$('#p4').animate({marginLeft:'0px'}, 800)
+					})
+					
+					$('#continue_login').click(function(){
+						$('#p3').css('z-index', '2')
+						$('#p4').css('visibility', 'visible')
+						$('#p4').css('z-index', '10')
+						$('#p4').css('margin-left', '100%')
+						$('#p4').animate({marginLeft:'0px'}, 800)
+					})
+					
+					$('#continue_opciones').click(function(){
+						$('#p4').css('z-index', '2')
+						$('#p5').css('visibility', 'visible')
+						$('#p5').css('z-index', '10')
+						$('#p5').css('margin-left', '100%')
+						$('#p5').animate({marginLeft:'0px'}, 800)
+					})
+					
+					$('#continue_mapa').click(function(){
+						$('#add_location').fadeIn(800)
+						
+					})
+					
+					$('#continue_add, #cierra_add').click(function(){
+						$('#p5').css('z-index', '2')
+						$('#p6').css('visibility', 'visible')
+						$('#p6').css('z-index', '10')
+						$('#p6').css('margin-left', '100%')
+						$('#p6').animate({marginLeft:'0px'}, 800)
+					})
+                  </script>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div id="p6" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:82%; background:url(img/chica3.jpg); background-size:cover; background-position:center">
+                        	   <div class="texto_bt centrar_h" style="position:absolute; top:10%; color:#FFFFFF; text-align:center; width:100%">Choose one option</div>
+                             	
+                             	<img id="cast" class="centrar_h" src="img/option1.png" style="height:25%; top:24%; cursor:pointer"/>
+                                <div class="textos_m centrar_h" style="position:absolute; top:53%; color:#FFFFFF; text-align:center">-- Or --</div>
+                                <img id="browse" class="centrar_h" src="img/option2.png" style="height:25%; top:61%; cursor:pointer"/>
+                                
+                                <script>
+                                	$('#cast').click(function(){
+										$("#cast" ).addClass("filtro1");
+										$("#browse" ).removeClass("filtro1");
+									})
+									
+									$('#browse').click(function(){
+										$("#browse" ).addClass("filtro1");
+										$("#cast" ).removeClass("filtro1");
+									})
+                                </script>
+                              
+                             
+                        </div>
+                        
+                        <div id="continue_choose" class="bt_rosa" style="top:82%">
+                        	<div class="centrar texto_bt">CONTINUE</div>
+                        </div>
+                  </div>
+                  
+                  
+                  
+                  
+                   
+                  
+                  
+                  
+                  
+                  <div id="p7" class="contenido" style="visibility:hidden1">
+                        <div style="position:absolute; top:0%; width:100%; height:100%; background:url(img/video.jpg); background-size:cover; background-position:center">
+   
+                        </div>
+                        
+                        
+                        <img id="live" src="img/live.png" style="position:absolute; top:5%; height:4%; right:5%"/>
+                        
+                        
+                        <img id="tiempo1" class="centrar_h" src="img/circulo.png" style="position:absolute; bottom:-15%; height:25%; cursor:pointer"/>
+                        <div id="tiempo1a" class="centrar_h texto_bt" style="bottom:1%; color:#EB0C6D; text-align:center; font-weight:bold; cursor:pointer">00:12</div>
+                        
+                        <div id="persona_datos" class="bt_rosa" style="top:82%;">
+                        	<div class="textos_g" style="top:24%; left:10%; position:absolute; color:#FFFFFF">Jane Smith, 23</div>
+                            <div class="textos_m" style="top:45%; left:10%; position:absolute; color:#FFFFFF">Active 14 hr ago / México, México</div>
+                            <img src="img/estrella.png" style="position:absolute; top:66%; height:17%; left:10%"/>
+                            <img src="img/estrella.png" style="position:absolute; top:66%; height:17%; left:20%"/>
+                            <img src="img/estrella.png" style="position:absolute; top:66%; height:17%; left:30%"/>
+                            <img src="img/estrella.png" style="position:absolute; top:66%; height:17%; left:40%"/>
+                            <img src="img/estrella.png" style="position:absolute; top:66%; height:17%; left:50%"/>
+                            
+                            <img class="centrar_h" src="img/circulo.png" style="position:absolute; top:-32%; height:15%; margin-left:-10%"/>
+                            <img class="centrar_h" src="img/circulo.png" style="position:absolute; top:-32%; height:15%;"/>
+                            <img class="centrar_h" src="img/circulo.png" style="position:absolute; top:-32%; height:15%; margin-left:10%"/>
+                            
+                            <div id="mas" style="position:absolute; width:100%; height:100%; cursor:pointer"></div>
+                            
+                            <img id="aprobar" src="img/apr.png" style="position:absolute; top:-160%; height:80%; right:2%; cursor:pointer"/>
+                            <img id="rechazar" src="img/rec.png" style="position:absolute; top:-100%; height:80%; right:2%; cursor:pointer"/>
+                        </div>
+                        
+                        
+                        <div id="persona_mas" class="bt_blanco" style="top:100%; display:none">
+                        	<div class="textos_m centrar_v" style="left:10%; text-align:left; width:80%; position:absolute; color:#323232">Fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident dugiat nulla pariatur. Excepteur sint occaecat cupidatat non </div> 
+                        </div>
+                        
+                        
+                        
+                        
+                        <div id="persona_donate" class="bt_blanco" style="top:100%; display:none">
+                        	<div class="textos_m" style="left:10%; top:20%; text-align:left; width:80%; position:absolute; color:#323232">DONATE FOR EXTRA TIME</div>
+                            
+                            <div class="bt_blanco_r centrar_h" style="height:40%; top:45%; width:25%; margin-left:-30%">
+                            	<div class="centrar textos_g" style="color:#2A2A2A">MX $1</div>
+                            </div>
+                            <div class="bt_blanco_r centrar_h" style="height:40%; top:45%; width:25%">
+                            	<div class="centrar textos_g" style="color:#2A2A2A">MX $3</div>
+                            </div>
+                            <div class="bt_rosa_r centrar_h" style="height:40%; top:45%; width:25%; margin-left:30%">
+                            	<div class="centrar textos_g" style="color:#fff">MX $5</div>
+                            </div>
+                        </div>
+                        
+                        <div id="persona_tiempo" class="bt_blanco" style="top:100%; display:none">
+                        	<div class="textos_ex centrar_v" style="left:10%; text-align:center; width:80%; position:absolute; color:#323232; font-weight:bold">00:12 <span style="color:#E93838">+03:00</span></div> 
+                        </div>
+                        
+                        <div id="persona_divide" style="position:absolute; top:82%; width:80%; height:1px; left:10%; background:#C5C5C5; display:none"></div>
+                        
+                        
+                        
+                        
+                        <div id="persona_califica" style="position:absolute; width:100%; height:100%; background:url(img/azul.png); background-size:100% 100%; display:none">
+                        	<div style="position:absolute; width:70%; left:15%; height:55%; bottom:37%; background:#FFFFFF">
+                            	<div style="position:absolute; top:0px; width:100%; height:10%; background:#505659">
+                                	<div class="centrar_v textos_m" style="width:85%; left:15%; color:#FFFFFF">Session Ended:</div>
+                                </div>
+                                
+                                <div style="position:absolute; top:10%; width:80%; left:10%; height:20%; background:#fff; border-bottom:1px solid #9E9E9E">
+                                    <div class="centrar_v textos_g" style="width:75%; left:0%; color:#474747">Please, rate your caster</div>
+                                </div>
+                                
+                                
+                                 <div style="position:absolute; top:calc(30% + 1px); width:80%; left:10%; height:30%; background:#fff;">
+                                	<img class="centrar_v" src="img/es1.png" style="position:absolute; width:15%; left:0%;"/>
+                                    <img class="centrar_v" src="img/es1.png" style="position:absolute; width:15%; left:21%;"/>
+                                    <img class="centrar_v" src="img/es1.png" style="position:absolute; width:15%; left:42%;"/>
+                                    <img class="centrar_v" src="img/es1.png" style="position:absolute; width:15%; left:63%;"/>
+                                    <img class="centrar_v" src="img/es1.png" style="position:absolute; width:15%; left:84%;"/>
+                                    
+                                    
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; width:15%; left:0%;"/>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; width:15%; left:21%;"/>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; width:15%; left:42%;"/>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; width:15%; left:63%;"/>
+                                </div>
+                                
+                                <div id="add_favorites" class="bt_gris" style="bottom:18%;">
+                                	<div class="centrar texto_g" style="width:100%">ADD TO FAVORITES</div>
+                                </div>
+                                
+                                <div id="search_casters" class="bt_rosa" style="bottom:0px;">
+                                	<div class="centrar texto_g" style="width:100%">SEARCH MORE CASTERS</div>
+                                </div>
+                            </div>
+                            <img src="img/flechita.png" style="position:absolute; height:3%; bottom:34%; right:21%"/>
+                            <img id="cierra_video" src="img/cierra.png" style="position:absolute; height:11%; bottom:21%; right:18%"/>
+                        </div>
+                        
+                        <script>
+                        	$('#mas').click(function(){
+								$('#persona_datos').animate({top:'64%'}, 800)
+								$('#persona_mas').show()
+								$('#persona_mas').animate({top:'82%'}, 800)
+								$('#persona_califica').delay(15000).fadeIn(800)
+							})
+							
+							
+							$('#aprobar').click(function(){
+								$('#persona_datos').animate({top:'46%', opacity:'0'}, 800)
+								$('#persona_mas').show()
+								$('#persona_mas').animate({top:'64%'}, 800)
+								$('#persona_donate').show()
+								$('#persona_donate').animate({top:'82%'}, 800)
+								setTimeout("tiemm()", 800)
+							})
+							
+							function tiemm(){
+								$('#persona_datos').hide()
+								$('#persona_mas').animate({top:'46%', opacity:'0'}, 800)
+								$('#persona_donate').animate({top:'64%'}, 800)
+								$('#persona_tiempo').show()
+								$('#persona_tiempo').animate({top:'82%'}, 800)
+								$('#persona_divide').delay(800).fadeIn(800)
+								setTimeout("$('#persona_mas').hide()", 800)
+								
+								setTimeout("tiemm2()", 5000)
+							}
+							
+							
+							
+							function tiemm2(){
+								$('#persona_donate').animate({top:'100%'}, 800)
+								$('#persona_tiempo').animate({top:'118%'}, 800)
+								$('#persona_divide').fadeOut(0)
+								
+							}
+							
+							$('#tiempo1, #tiempo1a').click(function(){
+								$('#persona_donate').animate({top:'64%'}, 800)
+								$('#persona_tiempo').animate({top:'82%'}, 800)
+								$('#persona_divide').delay(800).fadeIn(800)
+								setTimeout("tiemm2()", 5000)
+							})
+                        </script>
+                        
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                        
+                  
+                  
+                   <div id="p8" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:85%; background:#FFFFFF;">
+                        	   <div class="bt_gris" style="height:8%">
+                                	<div class="textos_g centrar_v" style="width:90%; text-align:left; left:10%">CONTACS</div>
+                                </div>
+                                
+                                <div class="chat" style="position:absolute; width:80%; height:calc(15% - 1px); top:10%; left:10%; border-bottom:1px solid #D3D3D3; cursor:pointer">
+                                	<img class="centrar_v" src="img/chat1.png" style="position:absolute; height:70%; left:0%"/>
+                                    <img src="img/verde.png" style="position:absolute; height:10%; left:22%; top:27%"/>
+                                    <div class="textos_g" style="position:absolute; left:27%; color:#494949; top:19%">Jane Smith</div>
+                                    <div class="textos_m" style="position:absolute; left:22%; color:#AAAAAA; top:50%;">11:17 Está bien...</div>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; height:30%; right:0%"/>
+                                </div>
+                                
+                                 <div class="chat" style="position:absolute; width:80%; height:calc(15% - 1px); top:25%; left:10%; border-bottom:1px solid #D3D3D3; cursor:pointer">
+                                	<img class="centrar_v" src="img/chat1.png" style="position:absolute; height:70%; left:0%"/>
+                                    <img src="img/verde.png" style="position:absolute; height:10%; left:22%; top:27%"/>
+                                    <div class="textos_g" style="position:absolute; left:27%; color:#494949; top:19%">Ximena Navarrete</div>
+                                    <div class="textos_m" style="position:absolute; left:22%; color:#AAAAAA; top:50%;">11:17 Adios</div>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; height:30%; right:0%"/>
+                                </div>
+                                
+                                
+                                  <div class="chat" style="position:absolute; width:80%; height:calc(15% - 1px); top:40%; left:10%; border-bottom:1px solid #D3D3D3; cursor:pointer">
+                                	<img class="centrar_v" src="img/chat1.png" style="position:absolute; height:70%; left:0%"/>
+                                    <img src="img/verde.png" style="position:absolute; height:10%; left:22%; top:27%"/>
+                                    <div class="textos_g" style="position:absolute; left:27%; color:#494949; top:19%">Valeria Santos</div>
+                                    <div class="textos_m" style="position:absolute; left:22%; color:#AAAAAA; top:50%;">11:17 Otra vez...</div>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; height:30%; right:0%; display:none"/>
+                                </div>
+                                
+                                <div class="chat" style="position:absolute; width:80%; height:calc(15% - 1px); top:55%; left:10%; border-bottom:1px solid #D3D3D3; cursor:pointer">
+                                	<img class="centrar_v" src="img/chat1.png" style="position:absolute; height:70%; left:0%"/>
+                                    <img src="img/off.png" style="position:absolute; height:10%; left:22%; top:27%; opacity:.5"/>
+                                    <div class="textos_g" style="position:absolute; left:27%; color:#494949; top:19%">Karla Pizarro</div>
+                                    <div class="textos_m" style="position:absolute; left:22%; color:#AAAAAA; top:50%;">11:17 :D</div>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; height:30%; right:0%; display:none"/>
+                                </div>
+                                
+                                <div class="chat" style="position:absolute; width:80%; height:calc(15% - 1px); top:70%; left:10%; border-bottom:1px solid #D3D3D3; cursor:pointer">
+                                	<img class="centrar_v" src="img/chat1.png" style="position:absolute; height:70%; left:0%"/>
+                                    <img src="img/off.png" style="position:absolute; height:10%; left:22%; top:27%; opacity:.5"/>
+                                    <div class="textos_g" style="position:absolute; left:27%; color:#494949; top:19%">Jennifer</div>
+                                    <div class="textos_m" style="position:absolute; left:22%; color:#AAAAAA; top:50%;">11:17 Nos vemos</div>
+                                    <img class="centrar_v" src="img/es2.png" style="position:absolute; height:30%; right:0%; display:none"/>
+                                </div>
+                                
+                                
+                                
+                               
+ 
+                        </div>
+                        
+                        <div class="bt_rosa" style="top:85%; height:15%">
+                        	<div class="centrar texto_bt" style="width:100%">SEARCH MORE CASTERS</div>
+                        </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div id="p9" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:85%; background:url(img/azul.png); background-size:cover; background-position:center">
+                        	   <div class="bt_gris" style="height:8%">
+                                	<div class="textos_g centrar_v" style="width:90%; text-align:left; left:10%">CHAT</div>
+                                </div>
+                                
+                                <div style="position:absolute; width:100%; height:10%; top:14%">
+                                	<img src="img/chat1.png" style="position:absolute; height:100%; left:10%"/>
+                                    <img src="img/verde.png" style="position:absolute; height:15%; left:27%; top:12%"/>
+                                    <div class="textos_m" style="position:absolute; left:32%; color:#FFFFFF; top:4%">Jane Smith</div>
+                                    <div class="bt_blanco_r textos_m" style="position:absolute; left:27%; top:40%; width:30%; height:40%">
+                                    	<div class="centrar" style="width:100%">11:17 Está bien...</div>
+                                    </div>
+                                </div>
+                                
+                                
+                                  <div style="position:absolute; width:100%; height:10%; top:26%">
+                                	<img src="img/chat2.png" style="position:absolute; height:100%; right:10%"/>
+                                    <img src="img/verde.png" style="position:absolute; height:15%; right:27%; top:12%"/>
+                                    <div class="textos_m" style="position:absolute; right:32%; color:#FFFFFF; top:4%">Nick Name</div>
+                                    <div class="bt_blanco_r textos_m" style="position:absolute; right:27%; top:40%; width:30%; height:40%">
+                                    	<div class="centrar" style="width:100%">11:18 No lo sé...</div>
+                                    </div>
+                                </div>
+                               
+ 
+                        </div>
+                        
+                        <div id="more" class="bt_rosa" style="top:85%; height:15%">
+                        	<div class="centrar texto_bt" style="width:100%">SEARCH MORE CASTERS</div>
+                        </div>
+                  </div>
+                  
+                  
+                  <script>
+				  var pos = 1
+                  	$('#login').click(function(){
+						$('#p1').css('z-index', '2')
+						$('#p3').css('visibility', 'visible')
+						$('#p3').css('z-index', '10')
+						$('#p3').css('margin-left', '100%')
+						$('#p3').animate({marginLeft:'0px'}, 800)
+						pos=3
+					})
+					
+					$('#signup').click(function(){
+						$('#p1').css('z-index', '2')
+						$('#p2').css('visibility', 'visible')
+						$('#p2').css('z-index', '10')
+						$('#p2').css('margin-left', '100%')
+						$('#p2').animate({marginLeft:'0px'}, 800)
+						pos=2
+					})
+					
+					
+					$('.bt_signup').click(function(){
+						$('#p2').css('z-index', '2')
+						$('#p4').css('visibility', 'visible')
+						$('#p4').css('z-index', '10')
+						$('#p4').css('margin-left', '100%')
+						$('#p4').animate({marginLeft:'0px'}, 800)
+						pos=4
+					})
+					
+					$('#continue_login').click(function(){
+						$('#p3').css('z-index', '2')
+						$('#p4').css('visibility', 'visible')
+						$('#p4').css('z-index', '10')
+						$('#p4').css('margin-left', '100%')
+						$('#p4').animate({marginLeft:'0px'}, 800)
+						pos=4
+					})
+					
+					$('#continue_opciones').click(function(){
+						$('#p4').css('z-index', '2')
+						$('#p5').css('visibility', 'visible')
+						$('#p5').css('z-index', '10')
+						$('#p5').css('margin-left', '100%')
+						$('#p5').animate({marginLeft:'0px'}, 800)
+						pos=5
+					})
+					
+					$('#continue_mapa').click(function(){
+						$('#add_location').fadeIn(800)
+						
+					})
+					
+					$('#continue_add, #cierra_add').click(function(){
+						$('#p5').css('z-index', '2')
+						$('#p6').css('visibility', 'visible')
+						$('#p6').css('z-index', '10')
+						$('#p6').css('margin-left', '100%')
+						$('#p6').animate({marginLeft:'0px'}, 800)
+						pos=6
+					})
+					
+					
+					$('#continue_choose').click(function(){
+						$('#p6').css('z-index', '2')
+						$('#p7').css('visibility', 'visible')
+						$('#p7').css('z-index', '10')
+						$('#p7').css('margin-left', '100%')
+						$('#p7').animate({marginLeft:'0px'}, 800)
+						pos=7
+					})
+					
+					
+					$('#add_favorites, #search_casters, #cierra_video').click(function(){
+						$('#p7').css('z-index', '2')
+						$('#p8').css('visibility', 'visible')
+						$('#p8').css('z-index', '10')
+						$('#p8').css('margin-left', '100%')
+						$('#p8').animate({marginLeft:'0px'}, 800)
+						pos=8
+					})
+					
+					$('.chat').click(function(){
+						$('#p8').css('z-index', '2')
+						$('#p9').css('visibility', 'visible')
+						$('#p9').css('z-index', '10')
+						$('#p9').css('margin-left', '100%')
+						$('#p9').animate({marginLeft:'0px'}, 800)
+						pos=9
+					})
+					
+					$('#more').click(function(){
+						$('#p9').css('z-index', '2')
+						$('#p8').css('visibility', 'visible')
+						$('#p8').css('z-index', '10')
+						$('#p8').css('margin-left', '100%')
+						$('#p8').animate({marginLeft:'0px'}, 800)
+						pos=8
+					})
+					
+					$('#home').click(function(){
+						$('#p1').css('visibility', 'visible')
+						$('#p1').css('z-index', '10')
+						$('#p1').css('margin-left', '100%')
+						$('#p1').animate({marginLeft:'0px'}, 800)
+						setTimeout($('#p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9').css('z-index', '1'))
+						if(pos==1){$('#p1').css('z-index', '2')}else
+						if(pos==2){$('#p2').css('z-index', '2')}else
+						if(pos==3){$('#p3').css('z-index', '2')}else
+						if(pos==4){$('#p4').css('z-index', '2')}else
+						if(pos==5){$('#p5').css('z-index', '2')}else
+						if(pos==6){$('#p6').css('z-index', '2')}else
+						if(pos==7){$('#p7').css('z-index', '2')}else
+						if(pos==8){$('#p8').css('z-index', '2')}else
+						if(pos==9){$('#p9').css('z-index', '2')}
+						pos=1
+					})
+					
+					$('#perfil').click(function(){
+						//$('#p9').css('z-index', '2')
+						$('#p4').css('visibility', 'visible')
+						$('#p4').css('z-index', '10')
+						$('#p4').css('margin-left', '100%')
+						$('#p4').animate({marginLeft:'0px'}, 800)
+						setTimeout($('#p1, #p2, #p3, #p5, #p6, #p7, #p8, #p9').css('z-index', '1'))
+						if(pos==1){$('#p1').css('z-index', '2')}else
+						if(pos==2){$('#p2').css('z-index', '2')}else
+						if(pos==3){$('#p3').css('z-index', '2')}else
+						if(pos==4){$('#p4').css('z-index', '2')}else
+						if(pos==5){$('#p5').css('z-index', '2')}else
+						if(pos==6){$('#p6').css('z-index', '2')}else
+						if(pos==7){$('#p7').css('z-index', '2')}else
+						if(pos==8){$('#p8').css('z-index', '2')}else
+						if(pos==9){$('#p9').css('z-index', '2')}
+						pos=4
+					})
+                  </script>
+                  
+                  
+                  
+                  
+            </div>
+        
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        
+        
+        <script>
+		
+
+	
+		inicio()
+		function inicio(){
+				var $window = $(window);
+				width = $window.width();
+				height = $window.height();
+				$('.titulo').css('font-size', height/25+'px')
+				$('.menu').css('font-size', height/35+'px')
+				$('.textos_p').css('font-size', height/38+'px')
+				$('.textos_ex').css('font-size', height/13+'px')
+				$('.textos_g').css('font-size', height/38+'px')
+				$('.textos_m').css('font-size', height/45+'px')
+				$('.textos_c').css('font-size', height/50+'px')
+				
+				$('.texto_bt').css('font-size', height/30+'px')
+				
+				StatusBar.hide(); 		
+	  	}
+		
+				setTimeout('pasa_intro()', 3000)
+				
+				function pasa_intro(){
+					$('#todo').css('visibility', 'visible')
+					$('#todo').animate({left:'100%'}, 0)
+					$('#todo').animate({left:'0%'}, 1000)
+					$('#portada').delay(1000).fadeOut(0)
+					StatusBar.hide();
+					//$('#todo')
+				}
+				
+				var posicion = 0
+				$('#bt_menu').click(function(){
+								$('#opciones').css('visibility','visible')
+								$('#opciones').animate({left:'0%', rotate: '0deg'}, 1000)
+								$('#opciones').css('z-index','2020')
+	
+								$('#bt_cerrar').fadeIn()
+								$('#bt_menu').fadeOut()
+								StatusBar.hide(); 
+				})
+	
+	
+				
+				
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('mapa'), {
+    zoom: 15,
+    center: {lat: 19.435156, lng: -99.175538},
+	zoomControl: false,
+  	mapTypeControl: false,
+  	scaleControl: false,
+  	streetViewControl: false,
+  	rotateControl: false
+  });
+
+  var image = 'img/pin.png';
+  
+  var beachMarker = new google.maps.Marker({
+    position: {lat: 19.431156, lng: -99.176838},
+    map: map,
+    icon: image
+  });
+  
+  var beachMarker2 = new google.maps.Marker({
+    position: {lat: 19.433156, lng: -99.179138},
+    map: map,
+    icon: image
+  });
+  
+  
+  var beachMarker3 = new google.maps.Marker({
+    position: {lat: 19.439156, lng: -99.172138},
+    map: map,
+    icon: image
+  });
+
+  beachMarker.addListener('click', function() {
+    map.setZoom(17);
+    map.setCenter(beachMarker.getPosition());
+	//$('#es_nombre').html('<b><?php echo dinv_extracto($row['nombre_estacion'], 3)?></b>')
+	//$('#es_direcc').html('<?php echo $row['ubicacion']?><br><?php echo $row['colonia']?>, <?php echo $row['municipio']?><br><?php echo $row['entidad']?>')
+  });
+  
+
+}
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgtWQ4SszBzM6N0GLhEWLG1FNFw5Ek1xo&signed_in=true&callback=initMap"></script>
+				
+        </script>
+    </body>
+</html>
