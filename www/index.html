@@ -351,7 +351,7 @@
                   
                   
                   
-                  <div id="p7" class="contenido" style="visibility:hidden1">
+                  <div id="p7" class="contenido" style="visibility:hidden">
                         <div style="position:absolute; top:0%; width:100%; height:100%; background:url(img/video.jpg); background-size:cover; background-position:center">
    
                         </div>
@@ -777,11 +777,8 @@
 				$('.textos_ex').css('font-size', height/13+'px')
 				$('.textos_g').css('font-size', height/38+'px')
 				$('.textos_m').css('font-size', height/45+'px')
-				$('.textos_c').css('font-size', height/50+'px')
-				
-				$('.texto_bt').css('font-size', height/30+'px')
-				
-				StatusBar.hide(); 		
+				$('.textos_c').css('font-size', height/50+'px')	
+				$('.texto_bt').css('font-size', height/30+'px')	
 	  	}
 		
 				setTimeout('pasa_intro()', 3000)
@@ -792,6 +789,7 @@
 					$('#todo').animate({left:'0%'}, 1000)
 					$('#portada').delay(1000).fadeOut(0)
 					StatusBar.hide();
+					alert("hola")
 					//$('#todo')
 				}
 				
