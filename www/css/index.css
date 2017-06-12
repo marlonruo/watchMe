@@ -94,6 +94,19 @@ border-radius: 14px 14px 14px 14px;
 }
 
 
+#vid, #vid2{
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 100%; 
+  min-height: 100%; 
+  width: auto; 
+  height: auto;
+  overflow: hidden;
+}
+
 
 
 .centrar {

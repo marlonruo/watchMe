@@ -48,8 +48,9 @@
             
             <div id="todo" class="paginas" style="visibility:hidden;">
             	  <div id="menu">
-                      <img src="img/menu.png" style="position:absolute; height:50%; top:25%; left:5%; cursor:pointer"/> 
-                      <img id="perfil" src="img/perfil.png" style="position:absolute; height:50%; top:25%; right:5%; cursor:pointer"/>
+                      <img id="bt_menu" src="img/menu.png" style="position:absolute; height:50%; top:25%; left:5%; cursor:pointer; display:none"/> 
+                      <img id="bt_cerrar" src="img/cerrar.png" style="position:absolute; height:50%; top:25%; left:5%; cursor:pointer; display:none"/> 
+                      <img id="bt_perfil" src="img/perfil.png" style="position:absolute; height:50%; top:25%; right:5%; cursor:pointer; display:none"/>
                       <div id="home" class="centrar menu" style="width:70%; text-align:center; color:#505659">WatchME!</div>
                   </div>
                   
@@ -58,12 +59,276 @@
                   
                   <div id="p1" class="contenido">
                   	<div style="position:absolute; top:0%; width:100%; height:64%; background:url(img/chica.jpg); background-size:cover; background-position:center">
-                    	<img src="img/logo.png" class="centrar" style="height:50%"/>
-                        <div class="centrar textos_g" style="margin-top:20%; text-align:center; color:#FFFFFF">Mi Perfil</div>
+                    	
                     </div>
                     <div id="login" class="bt_rosa" style="top:64%"><div class="centrar texto_bt">LOG IN</div></div>
                     <div id="signup" class="bt_blanco" style="top:82%"><div class="centrar texto_bt">SIGN UP</div></div>
                   </div>
+                  
+                  
+                  
+                  
+                  
+                  <div id="p1a" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:100%; background:url(img/chica3.jpg); background-size:cover; background-position:center">
+                        	   
+                               	<div id="cast" style="position:absolute; width:100%; height:50%; background:url(img/rosa.png); background-size:100% 100%">
+                             	
+                             		<img class="centrar_h" src="img/cast.png" style="height:30%; top:35%; cursor:pointer"/>
+                                    <div class="textos_m" style="position:absolute; width:100%; text-align:center; top:75%; color:#FFFFFF">Cast</div>
+                                </div>
+                                
+                                <div id="browse" style="position:absolute; width:100%; top:50%; height:50%;">
+                             	
+                             		<img class="centrar_h" src="img/browse.png" style="height:30%; top:35%; cursor:pointer"/>
+                                    <div class="textos_m" style="position:absolute; width:100%; text-align:center; top:75%; color:#FFFFFF">Browse</div>
+                                </div>
+                                
+                                
+                                
+                                <script>
+                                	$('#cast').mousedown(function(){
+										$("#browse" ).css('background','none')
+										$("#cast" ).css('background','url(img/rosa.png)')
+										$("#cast" ).css('background-size', '100% 100%')
+									})
+									
+									$('#browse').mousedown(function(){
+										$("#cast" ).css('background','none')
+										$("#browse" ).css('background','url(img/rosa.png)')
+										$("#browse" ).css('background-size', '100% 100%')
+									})
+									
+									
+									
+									$('#cast').mouseup(function(){
+										setTimeout("pasa_cast()", 500)
+									})
+									
+									function pasa_cast(){
+										$('#p1a').css('z-index', '2')
+										$('#p2a').css('visibility', 'visible')
+										$('#p2a').css('z-index', '10')
+										$('#p2a').css('margin-left', '100%')
+										$('#p2a').animate({marginLeft:'0px'}, 800)
+									}
+									
+									
+									$('#browse').mouseup(function(){
+										setTimeout("pasa_sig()", 500)
+									})
+									
+									
+									
+									function pasa_sig(){
+										$('#p1a').css('z-index', '2')
+										$('#p2').css('visibility', 'visible')
+										$('#p2').css('z-index', '10')
+										$('#p2').css('margin-left', '100%')
+										$('#p2').animate({marginLeft:'0px'}, 800)
+									}
+                                </script>
+                              
+                             
+                        </div> 
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div id="p2a" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:82%; background:url(img/chica3.jpg); background-size:cover; background-position:center">
+                        	   <div class="textos_m" style="position:absolute; top:5%; left:10%; color:#FFFFFF; text-align:left;">NICKNAME:</div>
+                               
+                               
+                               <input class="textos_g" type="text" style="position:absolute; top:11%; text-align:left; margin-left:5%; color:#2F2F2F; width:80%; height:8%; font-family:Arial; background:#fff; border:none; padding-left:10%;" value="">
+                               
+                              
+                               <div id="ancho" class="textos_m" style="position:absolute; top:22%; left:10%; color:#FFFFFF; text-align:left;">AGE:</div>
+                                <div id="edad" class="textos_m" style="position:absolute; top:22%; right:10%; color:#FFFFFF; text-align:right;">18</div>
+                               
+                               <div style="position:absolute; top:28%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                       		   		<div class="centrar_v" style="width:80%; height:1px; left:10%; background:#B8B8B8"></div>
+                                    <div id="barra" class="centrar_v" style="width:0px; height:1px; left:10%; background:#d71486"></div>
+                                    
+                                    <div id="contiene_bolita1" class="centrar_v" style="height:60%; left:10%; width:80%">
+                           		    	<img id="bolita1" src="img/bolita.png" class="centrar_v" style="height:100%; left:0%; cursor:pointer"/> 
+                                    </div>
+                           		</div>
+                                
+                                <script>
+                                
+		 var ancho 	
+		 var cachos	
+		 var posicion			
+		 $(function() {
+           $("#bolita1").draggable({ containment: '#contiene_bolita1', axis: "x",
+		  	start: function() {
+            	$(this).css('z-index','20');
+          	},
+        	stop: function() {
+                $(this).css('z-index', '1');
+        	},
+			drag: function() {
+				ancho = $('#contiene_bolita1').width()
+				$('#barra').css('width', $('#bolita1').position().left+'px')
+				cachos = ancho / 85
+				$('#edad').html(Math.round(($('#bolita1').position().left / cachos)+18))
+				
+  			}
+		  });
+        });
+								
+                                
+                                </script>
+                               
+                               
+                             	<div class="textos_m" style="position:absolute; top:39%; left:10%; color:#FFFFFF; text-align:left;">COUNTRY:</div>
+                                
+                                
+                                <select class="textos_m" style="position:absolute; top:45%; text-align:left; margin-left:5%; padding-left:8%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; border:none">
+                                	<option value="México">México</option>
+  									<option value="Colombia">Colombia</option>
+                                	<option value="Venezuela">Venezuela</option>
+                                </select>
+                                  
+                               <div class="textos_m" style="position:absolute; top:56%; left:10%; color:#FFFFFF; text-align:left;">I AM:</div>
+                               
+                               <div style="position:absolute; top:62%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                            		<div class="centrar_v textos_g" style="left:10%">Male</div>
+                                    <div class="centrar_v textos_g" style="left:50%">|</div>
+                                    <div class="centrar_v textos_g" style="left:60%">Female</div>
+                                    
+                                     <div id="bt_h" class="bt_rosa_r centrar_v" style="left:5%; width:40%; height:70%; opacity:0">
+                                    	<div class="centrar textos_g">Male</div>
+                                    </div>
+                                    <div id="bt_m" class="bt_rosa_r centrar_v" style="left:55%; width:40%; height:70%">
+                                    	<div class="centrar textos_g">Female</div>
+                                    </div>
+                                    
+                                    <script>
+                                    	$('#bt_h').click(function(){
+											$('#bt_h').animate({opacity:'1'}, 300)
+											$('#bt_m').animate({opacity:'0'}, 300)
+										})
+										$('#bt_m').click(function(){
+											$('#bt_m').animate({opacity:'1'}, 300)
+											$('#bt_h').animate({opacity:'0'}, 300)
+										})
+                                    </script>
+                                    
+                               </div>
+                               
+                              
+                              
+                              <div class="textos_m" style="position:absolute; top:73%; left:10%; color:#FFFFFF; text-align:left;">SHOW ME TO</div>
+                              
+                               
+                          		<div id="ver_h2" style="position:absolute; top:79%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                       		   		<div class="centrar_v textos_g" style="left:10%">Men</div>
+                            		<img class="centrar_v" src="img/cuadro.png" height="50%" style="right:5%"/>
+                                    <img id="pal_h2" class="centrar_v" src="img/pal1.png" height="45%" style="right:4%; margin-top:-1%"/> 
+                               </div>
+                               
+                               <div id="ver_m2" style="position:absolute; top:87%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                               		<div class="centrar_v textos_g" style="left:10%">Women</div>
+                                    <img class="centrar_v" src="img/cuadro.png" height="50%" style="right:5%"/>
+                                    <img id="pal_m2" class="centrar_v" src="img/pal2.png" height="45%" style="right:4%; margin-top:-1%"/>
+                               </div>
+                               
+                               
+                               <script>
+							   var ve1a=1
+                               $('#ver_h2').click(function(){
+									if(ve1a==0){
+										$('#pal_h2').fadeIn(300)
+										ve1a=1
+									}else{
+										$('#pal_h2').fadeOut(300)
+										ve1a=0
+									}
+								})
+								
+							   var ve2a=1
+                               $('#ver_m2').click(function(){
+									if(ve2a==0){
+										$('#pal_m2').fadeIn(300)
+										ve2a=1
+									}else{
+										$('#pal_m2').fadeOut(300)
+										ve2a=0
+									}
+								})
+                               </script>
+                               
+                               
+                               <div style="position:absolute; top:87%; text-align:left; margin-left:10%; width:80%; height:1px; background:#AAAAAA"> 		
+                               </div>
+  
+                        </div>
+                        
+                        <div id="continue_perfil" class="bt_rosa" style="top:82%">
+                        	<div class="centrar texto_bt">SAVE</div>
+                        </div>
+                  </div>
+                  
+                  
+                  
+                  
+               <div id="p2b" class="contenido" style="visibility:hidden;">
+                  		<div style="position:absolute; width:100%; height:50%; background:url(img/foto_perfil.png); background-size:cover; background-position:center">
+                       	  <div id="editar_fotos" class="textos_g" style="position:absolute; top:10%; right:10%; color:rgba(45,45,45,1.00); cursor:pointer">Edit</div>
+                        </div>
+                		<div class="bt_rosa" style="top:50%;">
+                        	<div class="textos_titulo" style="position:absolute; top:27%; left:10%">Jane Smith, 23</div>
+                            <div class="textos_c" style="position:absolute; top:51%; left:10%">Country, State</div>
+                  			<div id="editar_perfil" class="textos_g" style="position:absolute; top:20%; right:10%; cursor:pointer">Edit</div>
+                        </div>
+                        
+                		<textarea class="textos_m" style="width:80%; padding:5%; padding-top:2%; padding-bottom:2%; height:10%; left:5%; top:71%; position:absolute; color:#1B1B1B; border:none; background:#ECECEC; font-family:'Arial'; resize:none">ACERCA DE:</textarea>
+                        
+                		<img src="img/paypal.png" style="width:60%; left:20%; top:86%; position:absolute"/> 
+                </div>
+                
+                
+                <div id="p2c" class="contenido" style="visibility:hidden; overflow:hidden; overflow-y:scroll">
+                  		<div style="position:absolute; width:100%; height:50%; background:url(img/foto_perfil.png); background-size:cover; background-position:center">
+                       	  
+                        </div>
+                        <div style="position:absolute; width:100%; height:8%; top:50%">
+                			<div class="textos_g centrar_v" style="position:absolute; left:10%; color:rgba(57,57,57,1.00)">SELECT YOUR PHOTOS</div>
+                        </div>
+                        
+                        <div style="position:absolute; width:33%; height:21%; top:58%; background-image:url(img/f1.png); background-position:center; background-size:cover">
+                        	<img src="img/eliminar.png" style="width:10%; bottom:10%; right:15%; position:absolute"/>
+                        </div>
+                        <div style="position:absolute; width:33%; left:33%; height:21%; top:58%; background-image:url(img/f2.png); background-position:center; background-size:cover">
+                        	<img src="img/eliminar.png" style="width:10%; bottom:10%; right:15%; position:absolute"/>
+                        </div>
+                        <div style="position:absolute; width:34%; left:66%; height:21%; top:58%; background-image:url(img/f3.png); background-position:center; background-size:cover">
+                        	<img src="img/eliminar.png" style="width:10%; bottom:10%; right:15%; position:absolute"/>
+                        </div>
+                        
+                        <div style="position:absolute; width:33%; height:21%; top:79%; background-image:url(img/f4.png); background-position:center; background-size:cover">
+                        	<img src="img/eliminar.png" style="width:10%; bottom:10%; right:15%; position:absolute"/>
+                        </div>
+                        <div style="position:absolute; width:33%; left:33%; height:21%; top:79%; background-image:url(img/f5.png); background-position:center; background-size:cover">
+                        	<img src="img/eliminar.png" style="width:10%; bottom:10%; right:15%; position:absolute"/>
+                        </div>
+                        <div style="position:absolute; width:34%; left:66%; height:21%; top:79%;">
+                        	<img src="img/mas.png" style="width:10%; bottom:10%; right:15%; position:absolute"/>
+                        </div>
+                        
+                        
+                        
+                		 <div id="save_fotos" class="bt_rosa" style="top:100%">
+                        	<div class="centrar texto_bt">SAVE</div>
+                        </div>
+                </div>
+                  
                   
                   
                   
@@ -140,21 +405,21 @@
                                     <div class="centrar_v textos_g" style="left:50%">|</div>
                                     <div class="centrar_v textos_g" style="left:60%">Female</div>
                                     
-                                     <div id="bt_h" class="bt_rosa_r centrar_v" style="left:5%; width:40%; height:70%; opacity:0">
+                                     <div id="bt_h3" class="bt_rosa_r centrar_v" style="left:5%; width:40%; height:70%; opacity:0">
                                     	<div class="centrar textos_g">Male</div>
                                     </div>
-                                    <div id="bt_m" class="bt_rosa_r centrar_v" style="left:55%; width:40%; height:70%">
+                                    <div id="bt_m3" class="bt_rosa_r centrar_v" style="left:55%; width:40%; height:70%">
                                     	<div class="centrar textos_g">Female</div>
                                     </div>
                                     
                                     <script>
-                                    	$('#bt_h').click(function(){
-											$('#bt_h').animate({opacity:'1'}, 300)
-											$('#bt_m').animate({opacity:'0'}, 300)
+                                    	$('#bt_h3').click(function(){
+											$('#bt_h3').animate({opacity:'1'}, 300)
+											$('#bt_m3').animate({opacity:'0'}, 300)
 										})
-										$('#bt_m').click(function(){
-											$('#bt_m').animate({opacity:'1'}, 300)
-											$('#bt_h').animate({opacity:'0'}, 300)
+										$('#bt_m3').click(function(){
+											$('#bt_m3').animate({opacity:'1'}, 300)
+											$('#bt_h3').animate({opacity:'0'}, 300)
 										})
                                     </script>
                                     
@@ -205,20 +470,53 @@
                                
                                <div class="textos_g" style="position:absolute; top:58%; left:10%; color:#FFFFFF; text-align:left;">COUNTRY:</div>
                                
-                               <div style="position:absolute; top:64%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
-                       		   		<div class="centrar_v textos_g" style="left:10%">México</div>
-                            		<img class="centrar_v" src="img/abajo.png" height="15%" style="right:5%"/>
-                               </div>
+                              
+                               
+                               <select class="textos_m" style="position:absolute; top:64%; text-align:left; margin-left:5%; padding-left:8%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; border:none">
+                                	<option value="México">México</option>
+  									<option value="Colombia">Colombia</option>
+                                	<option value="Venezuela">Venezuela</option>
+                                </select>
+                                
                                
                                <div class="textos_g" style="position:absolute; top:76%; left:10%; color:#FFFFFF; text-align:left;">SHOW AGES:</div>
-                                <div class="textos_g" style="position:absolute; top:76%; right:10%; color:#FFFFFF; text-align:right;">18 - 55+</div>
+                                <div id="edad2" class="textos_g" style="position:absolute; top:76%; right:10%; color:#FFFFFF; text-align:right;">18 - 55+</div>
                                
-                          <div style="position:absolute; top:82%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
+                          		<div style="position:absolute; top:82%; text-align:left; margin-left:5%; color:#2F2F2F; width:90%; height:8%; font-family:Arial; background:#fff; cursor:pointer">
                        		   		<div class="centrar_v" style="width:80%; height:1px; left:10%; background:#B8B8B8"></div>
-                                    <div class="centrar_v" style="width:30%; height:1px; left:10%; background:#d71486"></div>
+                                    <div id="barra2" class="centrar_v" style="width:0px; height:1px; left:10%; background:#d71486"></div>
                                     
-                           		    <img src="img/bolita.png" class="centrar_v" style="height:60%; left:40%; opacity:.5"/> 
-                           </div>
+                                    <div id="contiene_bolita2" class="centrar_v" style="height:60%; left:10%; width:80%">
+                           		    	<img id="bolita2" src="img/bolita.png" class="centrar_v" style="height:100%; left:0%; cursor:pointer"/> 
+                                    </div>
+                           		</div>
+                           
+                           
+                           <script>
+                                
+		 var ancho2 	
+		 var cachos2	
+		 var posicion2			
+		 $(function() {
+           $("#bolita2").draggable({ containment: '#contiene_bolita2', axis: "x",
+		  	start: function() {
+            	$(this).css('z-index','20');
+          	},
+        	stop: function() {
+                $(this).css('z-index', '1');
+        	},
+			drag: function() {
+				ancho = $('#contiene_bolita2').width()
+				$('#barra2').css('width', $('#bolita2').position().left+'px')
+				cachos = ancho / 85
+				$('#edad2').html('+' + Math.round(($('#bolita2').position().left / cachos)+18))
+				
+  			}
+		  });
+        });
+								
+                                
+                                </script>
                              
                              
                              
@@ -294,60 +592,6 @@
 				  $('#mapa').click(function(){
 				  	$("#ubi").blur();
 				  })
-				  
-                  	$('#login').click(function(){
-						$('#p1').css('z-index', '2')
-						$('#p3').css('visibility', 'visible')
-						$('#p3').css('z-index', '10')
-						$('#p3').css('margin-left', '100%')
-						$('#p3').animate({marginLeft:'0px'}, 800)
-					})
-					
-					$('#signup').click(function(){
-						$('#p1').css('z-index', '2')
-						$('#p2').css('visibility', 'visible')
-						$('#p2').css('z-index', '10')
-						$('#p2').css('margin-left', '100%')
-						$('#p2').animate({marginLeft:'0px'}, 800)
-					})
-					
-					
-					$('.bt_signup').click(function(){
-						$('#p2').css('z-index', '2')
-						$('#p4').css('visibility', 'visible')
-						$('#p4').css('z-index', '10')
-						$('#p4').css('margin-left', '100%')
-						$('#p4').animate({marginLeft:'0px'}, 800)
-					})
-					
-					$('#continue_login').click(function(){
-						$('#p3').css('z-index', '2')
-						$('#p4').css('visibility', 'visible')
-						$('#p4').css('z-index', '10')
-						$('#p4').css('margin-left', '100%')
-						$('#p4').animate({marginLeft:'0px'}, 800)
-					})
-					
-					$('#continue_opciones').click(function(){
-						$('#p4').css('z-index', '2')
-						$('#p5').css('visibility', 'visible')
-						$('#p5').css('z-index', '10')
-						$('#p5').css('margin-left', '100%')
-						$('#p5').animate({marginLeft:'0px'}, 800)
-					})
-					
-					$('#continue_mapa').click(function(){
-						$('#add_location').fadeIn(800)
-						
-					})
-					
-					$('#continue_add, #cierra_add').click(function(){
-						$('#p5').css('z-index', '2')
-						$('#p6').css('visibility', 'visible')
-						$('#p6').css('z-index', '10')
-						$('#p6').css('margin-left', '100%')
-						$('#p6').animate({marginLeft:'0px'}, 800)
-					})
                   </script>
                   
                   
@@ -355,33 +599,7 @@
                   
                   
                   
-                  <div id="p6" class="contenido" style="visibility:hidden">
-                        <div style="position:absolute; top:0%; width:100%; height:82%; background:url(img/chica3.jpg); background-size:cover; background-position:center">
-                        	   <div class="texto_bt centrar_h" style="position:absolute; top:10%; color:#FFFFFF; text-align:center; width:100%">Choose one option</div>
-                             	
-                             	<img id="cast" class="centrar_h" src="img/option1.png" style="height:25%; top:24%; cursor:pointer"/>
-                                <div class="textos_m centrar_h" style="position:absolute; top:53%; color:#FFFFFF; text-align:center">-- Or --</div>
-                                <img id="browse" class="centrar_h" src="img/option2.png" style="height:25%; top:61%; cursor:pointer"/>
-                                
-                                <script>
-                                	$('#cast').click(function(){
-										$("#cast" ).addClass("filtro1");
-										$("#browse" ).removeClass("filtro1");
-									})
-									
-									$('#browse').click(function(){
-										$("#browse" ).addClass("filtro1");
-										$("#cast" ).removeClass("filtro1");
-									})
-                                </script>
-                              
-                             
-                        </div>
-                        
-                        <div id="continue_choose" class="bt_rosa" style="top:82%">
-                        	<div class="centrar texto_bt">CONTINUE</div>
-                        </div>
-                  </div>
+                  
                   
                   
                   
@@ -392,16 +610,27 @@
                   
                   
                   <div id="p7" class="contenido" style="visibility:hidden">
-                        <div style="position:absolute; top:0%; width:100%; height:100%; background:url(img/video.jpg); background-size:cover; background-position:center">
-   
-                        </div>
+                        <div id="per1" style="position:absolute; top:0%; width:100%; height:100%; background:url(img/video.jpg); background-size:cover; background-position:center"></div>
+                        <div id="per2" style="position:absolute; top:0%; width:100%; height:100%; margin-left:100%; background:url(img/f1.png); background-size:cover; background-position:center"></div>
                         
+                    <div id="per3" style="position:absolute; top:0%; width:100%; height:100%; margin-left:100%; background:url(img/f2.png); background-size:cover; background-position:center"></div>
                         
-                        <img id="live" src="img/live.png" style="position:absolute; top:5%; height:4%; right:5%"/>
+                    <div id="per4" style="position:absolute; top:0%; width:100%; height:100%; margin-left:100%; background:url(img/f3.png); background-size:cover; background-position:center; overflow:hidden">
+                
+                    </div>
+                    
+                    <div id="videito" style="position:absolute; top:0%; width:100%; height:100%; overflow:hidden; display:none">
+                    
+                    	 <video id="vid" src="img/chica.mp4"></video>
+                    </div>
+                        
+                       
+                        
+<img id="live" src="img/live.png" style="position:absolute; top:5%; height:4%; right:5%"/>
                         
                         
                         <img id="tiempo1" class="centrar_h" src="img/circulo.png" style="position:absolute; bottom:-15%; height:25%; cursor:pointer"/>
-                        <div id="tiempo1a" class="centrar_h texto_bt" style="bottom:1%; color:#EB0C6D; text-align:center; font-weight:bold; cursor:pointer">00:12</div>
+                    <div id="tiempo1a" class="centrar_h texto_bt" style="bottom:1%; color:#EB0C6D; text-align:center; font-weight:bold; cursor:pointer"><span id="minu2">3</span>:<span id="dec2">0</span><span id="seg2">0</span></div>
                         
                         <div id="persona_datos" class="bt_rosa" style="top:82%;">
                         	<div class="textos_g" style="top:24%; left:10%; position:absolute; color:#FFFFFF">Jane Smith, 23</div>
@@ -422,6 +651,33 @@
                             <img id="rechazar" src="img/rec.png" style="position:absolute; top:-100%; height:80%; right:2%; cursor:pointer"/>
                         </div>
                         
+                        <script>
+                        	var per=1
+                        	$('#rechazar').click(function(){
+								if(per==1){
+									$('#per1').animate({marginLeft:'-100%'}, 600)
+									$('#per2').css('margin-left', '100%')
+									$('#per2').animate({marginLeft:'0%'}, 600)
+									per=2
+								}else if(per==2){
+									$('#per2').animate({marginLeft:'-100%'}, 600)
+									$('#per3').css('margin-left', '100%')
+									$('#per3').animate({marginLeft:'0%'}, 600)
+									per=3
+								}else if(per==3){
+									$('#per3').animate({marginLeft:'-100%'}, 600)
+									$('#per4').css('margin-left', '100%')
+									$('#per4').animate({marginLeft:'0%'}, 600)
+									per=4
+								}else if(per==4){
+									$('#per4').animate({marginLeft:'-100%'}, 600)
+									$('#per1').css('margin-left', '100%')
+									$('#per1').animate({marginLeft:'0%'}, 600)
+									per=1
+								}
+							})
+                        </script>
+                        
                         
                         <div id="persona_mas" class="bt_blanco" style="top:100%; display:none">
                         	<div class="textos_m centrar_v" style="left:10%; text-align:left; width:80%; position:absolute; color:#323232">Fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident dugiat nulla pariatur. Excepteur sint occaecat cupidatat non </div> 
@@ -433,19 +689,19 @@
                         <div id="persona_donate" class="bt_blanco" style="top:100%; display:none">
                         	<div class="textos_m" style="left:10%; top:20%; text-align:left; width:80%; position:absolute; color:#323232">DONATE FOR EXTRA TIME</div>
                             
-                            <div class="bt_blanco_r centrar_h" style="height:40%; top:45%; width:25%; margin-left:-30%">
-                            	<div class="centrar textos_g" style="color:#2A2A2A">MX $1</div>
+                            <div id="mas1" class="bt_blanco_r centrar_h" style="height:40%; top:45%; width:25%; margin-left:-30%">
+                            	<div id="mas1_t" class="centrar textos_g" style="color:#2A2A2A">MX $1</div>
                             </div>
-                            <div class="bt_blanco_r centrar_h" style="height:40%; top:45%; width:25%">
-                            	<div class="centrar textos_g" style="color:#2A2A2A">MX $3</div>
+                            <div id="mas3" class="bt_blanco_r centrar_h" style="height:40%; top:45%; width:25%">
+                            	<div id="mas3_t" class="centrar textos_g" style="color:#2A2A2A">MX $3</div>
                             </div>
-                            <div class="bt_rosa_r centrar_h" style="height:40%; top:45%; width:25%; margin-left:30%">
-                            	<div class="centrar textos_g" style="color:#fff">MX $5</div>
+                            <div id="mas5" class="bt_blanco_r centrar_h" style="height:40%; top:45%; width:25%; margin-left:30%">
+                            	<div id="mas5_t" class="centrar textos_g" style="color:#2A2A2A">MX $5</div>
                             </div>
                         </div>
                         
                         <div id="persona_tiempo" class="bt_blanco" style="top:100%; display:none">
-                        	<div class="textos_ex centrar_v" style="left:10%; text-align:center; width:80%; position:absolute; color:#323232; font-weight:bold">00:12 <span style="color:#E93838">+03:00</span></div> 
+                        	<div class="textos_ex centrar_v" style="left:10%; text-align:center; width:80%; position:absolute; color:#323232; font-weight:bold"><span id="minu">3</span>:<span id="dec">0</span><span id="seg">0</span> <span id="tres" style="color:#E93838; display:none">+03:00</span></div> 
                         </div>
                         
                         <div id="persona_divide" style="position:absolute; top:82%; width:80%; height:1px; left:10%; background:#C5C5C5; display:none"></div>
@@ -491,6 +747,95 @@
                         </div>
                         
                         <script>
+							var seg = 9
+							var dec = 5
+							var minu = 2
+							$('#dec, #dec2').html(dec)
+							$('#minu, #minu2').html(minu)
+							function cronometro(){
+								seg--
+								if(seg == 0 && dec ==0 && minu==0){
+									$('#persona_califica').fadeIn(800)
+									video1.pause()
+									$('#persona_donate').animate({top:'100%'}, 800)
+									$('#persona_tiempo').animate({top:'118%'}, 800)
+									$('#persona_divide').fadeOut(0)
+								}else{
+									if(cron==0){
+										setTimeout('cronometro()', 100)
+									}
+								}
+								
+								if(seg == 9 && dec ==2 && minu==0){
+									$('#persona_donate').animate({top:'64%'}, 800)
+									$('#persona_tiempo').animate({top:'82%'}, 800)
+									$('#persona_divide').delay(800).fadeIn(800)
+								}
+								
+								$('#seg').html(seg)
+								$('#seg2').html(seg)
+								if(seg==0){
+									seg=10
+								}else if(seg==9){
+									dec--
+									if(dec==-1){
+										dec=5	
+										minu--
+										$('#minu').html(minu)
+										$('#minu2').html(minu)
+									}
+									$('#dec').html(dec)
+									$('#dec2').html(dec)
+								}
+							}
+							
+							
+							$('#mas1').click(function(){
+								minu = minu + 3
+								$('#minu, #minu2').html(minu)
+								$('#tres').fadeIn(800)
+								$('#tres').delay(1000).fadeOut(800)
+								$('#mas1').css('background', 'url(img/fondo_boton.png)')
+								$('#mas1').css('background-size', '100% 100%')
+								setTimeout("$('#mas1').css('background', '#F2F2F3')", 1000)
+								$('#mas1_t').css('color', '#ffffff')
+								setTimeout("$('#mas1_t').css('color', '#2A2A2A')", 1000)
+								
+								$('#persona_donate').delay(1800).animate({top:'100%'}, 800)
+								$('#persona_tiempo').delay(1800).animate({top:'118%'}, 800)
+								$('#persona_divide').delay(1800).fadeOut(0)
+							})
+							
+							$('#mas3').click(function(){
+								minu = minu + 3
+								$('#minu, #minu2').html(minu)
+								$('#tres').fadeIn(800)
+								$('#tres').delay(1000).fadeOut(800)
+								$('#mas3').css('background', 'url(img/fondo_boton.png)')
+								$('#mas3').css('background-size', '100% 100%')
+								setTimeout("$('#mas3').css('background', '#F2F2F3')", 1000)
+								$('#persona_donate').delay(1800).animate({top:'100%'}, 800)
+								$('#persona_tiempo').delay(1800).animate({top:'118%'}, 800)
+								$('#persona_divide').delay(1800).fadeOut(0)
+							})
+							
+							$('#mas5').click(function(){
+								minu = minu + 3
+								$('#minu, #minu2').html(minu)
+								$('#tres').fadeIn(800)
+								$('#tres').delay(1000).fadeOut(800)
+								$('#mas5').css('background', 'url(img/fondo_boton.png)')
+								$('#mas5').css('background-size', '100% 100%')
+								setTimeout("$('#mas5').css('background', '#F2F2F3')", 1000)
+								$('#persona_donate').delay(1800).animate({top:'100%'}, 800)
+								$('#persona_tiempo').delay(1800).animate({top:'118%'}, 800)
+								$('#persona_divide').delay(1800).fadeOut(0)
+							})
+							
+							
+							
+						
+							var video1 = document.getElementById('vid')
                         	$('#mas').click(function(){
 								$('#persona_datos').animate({top:'64%'}, 800)
 								$('#persona_mas').show()
@@ -500,13 +845,16 @@
 							
 							
 							$('#aprobar').click(function(){
+								$('#videito').show()
+								video1.play()
 								$('#persona_datos').animate({top:'46%', opacity:'0'}, 800)
 								$('#persona_mas').show()
 								$('#persona_mas').animate({top:'64%'}, 800)
 								$('#persona_donate').show()
 								$('#persona_donate').animate({top:'82%'}, 800)
-								$('#persona_califica').delay(15000).fadeIn(800)
+								//$('#persona_califica').delay(15000).fadeIn(800)
 								setTimeout("tiemm()", 800)
+								cronometro()
 							})
 							
 							function tiemm(){
@@ -652,7 +1000,76 @@
                   </div>
                   
                   
+                  
+                  
+                  
+                  <div id="mmee" class="contenido" style="visibility:hidden">
+                        <div style="position:absolute; top:0%; width:100%; height:100%; background:#FFFFFF;">
+                        	   <div id="atras" style="position:absolute; width:100%; height:20%; background:url(img/fondo_boton.png); background-size:100% 100%; display:none"></div>
+                               <div class="bt_blanco mee1" style="height:calc(20% - 2px); width:80%; left:10%; border-bottom:1px solid rgba(188,188,188,1.00); border-top:1px solid rgba(188,188,188,1.00); background:none">
+                                	<img class="centrar_v" src="img/l1.png" style="position:absolute; height:40%; left:2%"/>
+                                    <div class="textos_g centrar_v" style="width:80%; text-align:left; left:20%">RETURN TO HOME</div>
+                               </div>
+                               <div class="bt_blanco mee2" style="height:calc(20% - 1px); width:80%; left:10%; border-bottom:1px solid rgba(188,188,188,1.00); top:20%; background:none">
+                                	<img class="centrar_v" src="img/l2.png" style="position:absolute; height:40%; left:2%"/>
+                                    <div class="textos_g centrar_v" style="width:80%; text-align:left; left:20%">EDIT PROFILE</div>
+                               </div>
+                               <div class="bt_blanco mee3" style="height:calc(20% - 1px); width:80%; left:10%; border-bottom:1px solid rgba(188,188,188,1.00); top:40%; background:none">
+                                	<img class="centrar_v" src="img/l3.png" style="position:absolute; height:40%; left:2%"/>
+                                    <div class="textos_g centrar_v" style="width:80%; text-align:left; left:20%">CHANGE LOCATION</div>
+                               </div>
+                               <div class="bt_blanco mee4" style="height:calc(20% - 1px); width:80%; left:10%; border-bottom:1px solid rgba(188,188,188,1.00); top:60%; background:none">
+                                	<img class="centrar_v" src="img/l4.png" style="position:absolute; height:40%; left:2%"/>
+                                    <div class="textos_g centrar_v" style="width:80%; text-align:left; left:20%">CONTACT US</div>
+                               </div>
+                               <div class="bt_blanco mee5" style="height:calc(20% - 1px); width:80%; left:10%; top:80%; background:none">
+                                	<img class="centrar_v" src="img/l5.png" style="position:absolute; height:40%; left:2%"/>
+                                    <div class="textos_g centrar_v" style="width:80%; text-align:left; left:20%">LOG OUT</div>
+                               </div>
+                        </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
                   <script>
+				  
+				  $('.mee1').click(function(){
+				  	$('#atras').show()
+					$('#atras').css('top', '0%')
+					$(this).css('color' ,'#fff')
+					setTimeout("$('.mee1').css('color' ,'#505659'); $('#atras').hide()", 1000)
+				  })
+				  
+				  $('.mee2').click(function(){
+				  	$('#atras').show()
+					$('#atras').css('top', '20%')
+					$(this).css('color' ,'#fff')
+					setTimeout("$('.mee2').css('color' ,'#505659'); $('#atras').hide()", 1000)
+				  })
+				  
+				  $('.mee3').click(function(){
+				  	$('#atras').show()
+					$('#atras').css('top', '40%')
+					$(this).css('color' ,'#fff')
+					setTimeout("$('.mee3').css('color' ,'#505659'); $('#atras').hide()", 1000)
+				  })
+				  
+				  $('.mee4').click(function(){
+				  	$('#atras').show()
+					$('#atras').css('top', '60%')
+					$(this).css('color' ,'#fff')
+					setTimeout("$('.mee4').css('color' ,'#505659'); $('#atras').hide()", 1000)
+				  })
+				  
+				  $('.mee5').click(function(){
+				  	$('#atras').show()
+					$('#atras').css('top', '80%')
+					$(this).css('color' ,'#fff')
+					setTimeout("$('.mee5').css('color' ,'#505659'); $('#atras').hide()", 1000)
+				  })
+				  
 				  var pos = 1
                   	$('#login').click(function(){
 						$('#p1').css('z-index', '2')
@@ -660,15 +1077,34 @@
 						$('#p3').css('z-index', '10')
 						$('#p3').css('margin-left', '100%')
 						$('#p3').animate({marginLeft:'0px'}, 800)
+						$('#bt_menu, #bt_perfil').fadeIn(800)
 						pos=3
+					})
+					
+					$('#bt_menu').click(function(){
+						$('#mmee').css('visibility', 'visible')
+						$('#mmee').css('z-index', '10')
+						$('#mmee').css('margin-left', '100%')
+						$('#mmee').animate({marginLeft:'0px'}, 800)
+						$('#bt_menu').hide()
+						$('#bt_cerrar').show()
+					})
+					
+					$('#bt_cerrar').click(function(){
+						$('#mmee').css('visibility', 'visible')
+						$('#mmee').css('z-index', '10')
+						$('#mmee').animate({marginLeft:'100%'}, 800)
+						$('#bt_menu').show()
+						$('#bt_cerrar').hide()
 					})
 					
 					$('#signup').click(function(){
 						$('#p1').css('z-index', '2')
-						$('#p2').css('visibility', 'visible')
-						$('#p2').css('z-index', '10')
-						$('#p2').css('margin-left', '100%')
-						$('#p2').animate({marginLeft:'0px'}, 800)
+						$('#p1a').css('visibility', 'visible')
+						$('#p1a').css('z-index', '10')
+						$('#p1a').css('margin-left', '100%')
+						$('#p1a').animate({marginLeft:'0px'}, 800)
+						//$('#bt_menu, #bt_perfil').fadeIn(800)
 						pos=2
 					})
 					
@@ -679,6 +1115,7 @@
 						$('#p4').css('z-index', '10')
 						$('#p4').css('margin-left', '100%')
 						$('#p4').animate({marginLeft:'0px'}, 800)
+						$('#bt_menu, #bt_perfil').fadeIn(800)
 						pos=4
 					})
 					
@@ -689,6 +1126,44 @@
 						$('#p4').css('margin-left', '100%')
 						$('#p4').animate({marginLeft:'0px'}, 800)
 						pos=4
+					})
+					
+					
+					$('#continue_perfil').click(function(){
+						$('#p2a').css('z-index', '2')
+						$('#p2b').css('visibility', 'visible')
+						$('#p2b').css('z-index', '10')
+						$('#p2b').css('margin-left', '100%')
+						$('#p2b').animate({marginLeft:'0px'}, 800)
+						pos='2b'
+						$('#bt_menu, #bt_perfil').fadeIn(800)
+					})
+					
+					$('#editar_fotos').click(function(){
+						$('#p2b').css('z-index', '2')
+						$('#p2c').css('visibility', 'visible')
+						$('#p2c').css('z-index', '10')
+						$('#p2c').css('margin-left', '100%')
+						$('#p2c').animate({marginLeft:'0px'}, 800)
+						pos='2c'
+					})
+					
+					$('#editar_perfil').click(function(){
+						$('#p2b').css('z-index', '2')
+						$('#p2a').css('visibility', 'visible')
+						$('#p2a').css('z-index', '10')
+						$('#p2a').css('margin-left', '100%')
+						$('#p2a').animate({marginLeft:'0px'}, 800)
+						pos='2a'
+					})
+					
+					$('#save_fotos').click(function(){
+						$('#p2c').css('z-index', '2')
+						$('#p2b').css('visibility', 'visible')
+						$('#p2b').css('z-index', '10')
+						$('#p2b').css('margin-left', '100%')
+						$('#p2b').animate({marginLeft:'0px'}, 800)
+						pos='2b'
 					})
 					
 					$('#continue_opciones').click(function(){
@@ -707,22 +1182,15 @@
 					
 					$('#continue_add, #cierra_add').click(function(){
 						$('#p5').css('z-index', '2')
-						$('#p6').css('visibility', 'visible')
-						$('#p6').css('z-index', '10')
-						$('#p6').css('margin-left', '100%')
-						$('#p6').animate({marginLeft:'0px'}, 800)
-						pos=6
-					})
-					
-					
-					$('#continue_choose').click(function(){
-						$('#p6').css('z-index', '2')
 						$('#p7').css('visibility', 'visible')
 						$('#p7').css('z-index', '10')
 						$('#p7').css('margin-left', '100%')
 						$('#p7').animate({marginLeft:'0px'}, 800)
 						pos=7
 					})
+					
+					
+					
 					
 					
 					$('#add_favorites, #search_casters, #cierra_video').click(function(){
@@ -754,7 +1222,25 @@
 					
 					
 					
+					var cron=0
 					$('#home').click(function(){
+						
+						per=1
+                        cron=1	
+									$('#per1').animate({marginLeft:'0%'}, 0)
+									$('#per2').animate({marginLeft:'100%'}, 0)
+									$('#per3').animate({marginLeft:'100%'}, 0)
+									$('#per4').animate({marginLeft:'100%'}, 0)
+									$('#videito').hide()
+									video1.pause()
+									video1.currentTime = 0;
+									
+							
+							
+							setTimeout("seg = 9; dec = 5; minu = 2; $('#dec, #dec2').html(dec); $('#minu, #minu2').html(minu); cron=0", 1001)
+							
+							
+						
 						$('#add_location').hide()
 						$('#persona_datos').show()
 						$('#persona_datos').animate({opacity:'1', top:'82%'},800)
@@ -773,6 +1259,15 @@
 						}else if(pos==2){
 							$('#p2').css('z-index', '2')
 							$('#p2').css('visibility', 'visible')
+						}else if(pos=='2a'){
+							$('#p2a').css('z-index', '2')
+							$('#p2a').css('visibility', 'visible')
+						}else if(pos=='2b'){
+							$('#p2b').css('z-index', '2')
+							$('#p2b').css('visibility', 'visible')
+						}else if(pos=='2c'){
+							$('#p2c').css('z-index', '2')
+							$('#p2c').css('visibility', 'visible')
 						}else if(pos==3){
 							$('#p3').css('z-index', '2')
 							$('#p3').css('visibility', 'visible')
@@ -863,6 +1358,25 @@
 		
 
 	
+		var pagina = window.location.hash
+		var pagina2 = window.location.hash
+		
+		function cambio(){
+			pagina2 = window.location.hash
+			if(pagina2 != pagina){
+				pagina = window.location.hash
+				iniciar()
+			}
+		}
+
+	
+		var t = setInterval(cambio,200);
+		function iniciar(){
+		
+		}
+	
+	
+	
 		inicio()
 		function inicio(){
 				var $window = $(window);
@@ -905,7 +1419,7 @@
 				
 function initMap() {
   var map = new google.maps.Map(document.getElementById('mapa'), {
-    zoom: 17,
+    zoom: 11,
     center: {lat: 19.435156, lng: -99.175538},
 	zoomControl: false,
   	mapTypeControl: false,
@@ -935,12 +1449,12 @@ function initMap() {
     icon: image
   });
 
-  beachMarker.addListener('click', function() {
+ /* beachMarker.addListener('click', function() {
     map.setZoom(17);
     map.setCenter(beachMarker.getPosition());
 	//$('#es_nombre').html('<b><?php echo dinv_extracto($row['nombre_estacion'], 3)?></b>')
 	//$('#es_direcc').html('<?php echo $row['ubicacion']?><br><?php echo $row['colonia']?>, <?php echo $row['municipio']?><br><?php echo $row['entidad']?>')
-  });
+  });*/
   
 
 }
